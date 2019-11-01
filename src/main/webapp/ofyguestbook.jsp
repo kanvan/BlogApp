@@ -147,7 +147,7 @@ to create you own blog posts!</p>
 
         for (int i = 0; i < 5; i++) {
         	
-        	if(greetings.get(i)!=null){
+        	if(greetings.size() > i){
         		Greeting greeting = greetings.get(i);
 
 	            pageContext.setAttribute("greeting_content",greeting.getContent());
