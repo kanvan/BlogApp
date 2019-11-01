@@ -145,10 +145,9 @@ to create you own blog posts!</p>
 
         <%
 
-        for (int i = 0; i < 5; i++) {
+        for (Greeting greeting: greetings) {
         	
-        	if(greetings.get(i)!=null){
-        		Greeting greeting = greetings.get(i);
+
 
 	            pageContext.setAttribute("greeting_content",greeting.getContent());
 	            pageContext.setAttribute("greeting_title", greeting.getTitle());
@@ -185,7 +184,7 @@ to create you own blog posts!</p>
 	            <%
         	}
 
-        }
+        
 		
         
         
@@ -194,8 +193,8 @@ to create you own blog posts!</p>
 
 %>
 
-	<form action="allposts.jsp" method="get">
-		<input type="submit" value="View All Posts" name="viewall" id="viewposts">
+	<form action="ofyguestbook.jsp" method="get">
+		<input type="submit" value="View less Posts" name="viewall" id="viewposts">
 	</form>
 
 <% 
