@@ -2,7 +2,9 @@
 <cronentries>
 	<cron>
 	<url>/cron</url>
-	<description>Cron Job that simply announces that it got invoked.</description>
-	<schedule>every 1 minutes</schedule>
+	<description>Send email updates every 24 hours.</description>
+	<schedule>every day 17:00</schedule>
+	<timezone>America/Chicago</timezone>
+	
 </cron>
 </cronentries>

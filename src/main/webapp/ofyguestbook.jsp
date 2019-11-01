@@ -40,7 +40,7 @@
 	  <li><a class="active" href="#home">Home</a></li>
 	  <li><a href="#news">News</a></li>
 	  <li><a href="#contact">Contact</a></li>
-	  
+	  	  
 	</ul>
  
 
@@ -101,11 +101,15 @@ to create you own blog posts!</p>
     Collections.sort(greetings);
 	
     boolean found = false;
+    Long id;
     //show unsub button if subbed, show sub button if unsubbed
     if(user != null){
 	    for(Subscriber sub : subs){
 	    	if(sub.getEmail().equals(user.getEmail())){
 	    		found = true;
+	    		id = sub.getID();
+	    		pageContext.setAttribute("userid", id.toString());
+	    		//TODO: check types
 	    	}
 	    }
     }
@@ -113,19 +117,18 @@ to create you own blog posts!</p>
     if(!found && user!=null){
     	%>
     	<form action="/subscribe" method="post">
-    		<div><input type="submit" value="Subscribe" /></div>
+    		<div><input type="submit" value="Subscribe to our latest Blog posts" /></div>
     		<input type="hidden" name="guestbookName" value="${fn:escapeXml(guestbookName)}"/>
     	</form>
     	<%
-    }else{
-    	for(Subscriber sub : subs){
-    		pageContext.setAttribute("user_email",
-    				
-                    sub.getEmail());
-    		%>
-    			<p>'${fn:escapeXml(user_email)}' is subscribed.</p>
-    		<%
-    	}
+    }else if (user!= null){
+		%>
+    			<form action="/unsubscribe" method="post">
+		    		<div><input type="submit" value="Unsubscribe from our latest Blog posts" /></div>
+		    		<input type="hidden" name="userid" value="${fn:escapeXml(userid)}"/>
+    			</form>		
+		
+		<%
     }
     
 

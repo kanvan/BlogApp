@@ -122,9 +122,6 @@ to create you own blog posts!</p>
     		pageContext.setAttribute("user_email",
     				
                     sub.getEmail());
-    		%>
-    			<p>'${fn:escapeXml(user_email)}' is subscribed.</p>
-    		<%
     	}
     }
     

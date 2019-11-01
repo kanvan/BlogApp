@@ -59,15 +59,28 @@
     
     <form action="/ofysign" method="post">
     
-      <div><textarea name="title" placeholder = "Enter title" rows="1" cols="60"></textarea></div>
 
-      <div><textarea name="content" placeholder = "Enter content" rows="3" cols="60"></textarea></div>
+      <br>
+      <h2>Create your Post!</h2>
+      <br>
+      <div><textarea name="title" placeholder = "Enter title" rows="1" cols="200"></textarea></div>
+      
+      <br>
+
+      <div><textarea name="content" placeholder = "Enter content" rows="15" cols="200"></textarea></div>
 
       <div><input type="submit" value="Submit Post" /></div>
 
       <input type="hidden" name="guestbookName" value="${fn:escapeXml(guestbookName)}"/>
 
     </form>
+    
+    <br>
+    
+    <form action="ofyguestbook.jsp" method="get">
+		<input type="submit" value="Cancel" name="cancel" id="cancel">
+	</form>
+    
 
 
 
