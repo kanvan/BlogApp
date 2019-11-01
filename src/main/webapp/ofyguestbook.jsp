@@ -150,26 +150,31 @@ to create you own blog posts!</p>
             <%
 
         }
+		
+        
+        
+    }
+    
+
+%>
+
+<% 
+    if (user != null) {
+
+
+%>
+	<div><button>Create New Post</button></div>
+
+<%
+
+    } else {
+
 
     }
 
 %>
 
- 
 
-    <form action="/ofysign" method="post">
-    
-      <div><textarea name="title" placeholder = "Enter title" rows="1" cols="60"></textarea></div>
-
-      <div><textarea name="content" placeholder = "Enter content" rows="3" cols="60"></textarea></div>
-
-      <div><input type="submit" value="Submit Post" /></div>
-
-      <input type="hidden" name="guestbookName" value="${fn:escapeXml(guestbookName)}"/>
-
-    </form>
-
- 
 
   </body>
 
