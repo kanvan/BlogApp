@@ -15,8 +15,7 @@
          </servlet-mapping>
          
       
-         
-       
+                
          <servlet>
         	<servlet-name>ofysign</servlet-name>
        	 	<servlet-class>guestbook.OfySignGuestbookServlet</servlet-class>
@@ -26,6 +25,22 @@
         	<servlet-name>ofysign</servlet-name>
        		<url-pattern>/ofysign</url-pattern>
     	 </servlet-mapping>
+    	 
+    	 
+    	 <servlet>
+			<servlet-name>cron</servlet-name>
+			<servlet-class>guestbook.CronServlet</servlet-class>
+	     </servlet>
+	     
+		<servlet-mapping>
+			<servlet-name>cron</servlet-name>
+			<url-pattern>/cron</url-pattern>
+		</servlet-mapping>
+         
+         
+         
+         
+         
          
          
  		 <filter>
