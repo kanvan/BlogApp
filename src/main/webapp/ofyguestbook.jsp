@@ -33,7 +33,13 @@
  
 
   <body>
-
+	<ul>
+	  <li><img alt="laugh" src="images/laugh.png" height="46"></li>
+	  <li><a class="active" href="#home">Home</a></li>
+	  <li><a href="#news">News</a></li>
+	  <li><a href="#contact">Contact</a></li>
+	  
+	</ul>
  
 
 <%
@@ -163,7 +169,9 @@ to create you own blog posts!</p>
 
 
 %>
-	<div><button>Create New Post</button></div>
+	<form action="createBlog.jsp" method="get">
+    	<input type="submit" value="Create new Blog Post" name="Submit" id="createPost" />
+	</form>
 
 <%
 
