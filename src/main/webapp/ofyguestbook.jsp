@@ -107,15 +107,26 @@ to create you own blog posts!</p>
 
         for (Greeting greeting : greetings) {
 
-            pageContext.setAttribute("greeting_content",
+            pageContext.setAttribute("greeting_content",greeting.getContent());
+            pageContext.setAttribute("greeting_title", greeting.getTitle());
+            pageContext.setAttribute("greeting_Date", greeting.getDate());
 
-                                     greeting.getContent());
+            
 
+            %>
+            
+            <div class="border">
+            	<blockquote> <h3> ${fn:escapeXml(greeting_title)} </h3></blockquote>
+	            <blockquote>${fn:escapeXml(greeting_content)}</blockquote>
+	            <blockquote>Posted on ${fn:escapeXml(greeting_Date)}</blockquote>
+          
+            <% 
+            
             if (greeting.getUser() == null) {
 
                 %>
 
-                <p>An anonymous person wrote:</p>
+                <blockquote>By anonymous</blockquote>
 
                 <%
 
@@ -127,16 +138,15 @@ to create you own blog posts!</p>
 
                 %>
 
-                <p><b>${fn:escapeXml(greeting_user.nickname)}</b> wrote:</p>
+                <blockquote> By <b>${fn:escapeXml(greeting_user.nickname)}</b></blockquote>
+
 
                 <%
 
             }
-
             %>
-
-            <blockquote>${fn:escapeXml(greeting_content)}</blockquote>
-
+            </div>
+            <br>
             <%
 
         }
@@ -148,8 +158,10 @@ to create you own blog posts!</p>
  
 
     <form action="/ofysign" method="post">
+    
+      <div><textarea name="title" placeholder = "Enter title" rows="1" cols="60"></textarea></div>
 
-      <div><textarea name="content" rows="3" cols="60"></textarea></div>
+      <div><textarea name="content" placeholder = "Enter content" rows="3" cols="60"></textarea></div>
 
       <div><input type="submit" value="Submit Post" /></div>
 

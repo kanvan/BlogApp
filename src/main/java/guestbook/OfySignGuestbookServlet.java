@@ -46,7 +46,7 @@ public class OfySignGuestbookServlet extends HttpServlet {
 
         User user = userService.getCurrentUser();
         
-        Greeting nuser = new Greeting(user, req.getParameter("content"), req.getParameter("guestbookName"));
+        Greeting nuser = new Greeting(user, req.getParameter("content"),req.getParameter("title"), req.getParameter("guestbookName"));
 
         ofy().save().entity(nuser).now();
         
