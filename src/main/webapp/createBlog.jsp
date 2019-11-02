@@ -32,6 +32,12 @@
 
 
 <body>
+	<ul>
+	  <li><img alt="laugh" src="images/laugh.png" height="46"></li>
+	  <li><a class="active" href="#home">Home</a></li>
+
+	  
+	</ul>
 
 
 <%

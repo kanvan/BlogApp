@@ -38,8 +38,7 @@
 	<ul>
 	  <li><img alt="laugh" src="images/laugh.png" height="46"></li>
 	  <li><a class="active" href="#home">Home</a></li>
-	  <li><a href="#news">News</a></li>
-	  <li><a href="#contact">Contact</a></li>
+
 	  	  
 	</ul>
  
@@ -65,7 +64,10 @@
       pageContext.setAttribute("user", user);
 
 %>
+<h1>Welcome to the Jokes Blog!</h1>
+<p>Share your smiles!</p>
 
+<img src="images/laughing_girl.jpg" alt="laughing girl" height="300">
 <p>Hello, ${fn:escapeXml(user.nickname)}! (You can
 
 <a href="<%= userService.createLogoutURL(request.getRequestURI()) %>">sign out</a>.)</p>
@@ -76,7 +78,11 @@
 
 %>
 
-<h1>Welcome to the Blog!</h1>
+<h1>Welcome to the Jokes Blog!</h1>
+<p>Share your smiles!</p>
+
+<img src="images/laughing_girl.jpg" alt="laughing girl" height="300">
+
 
 <p><a href="<%= userService.createLoginURL(request.getRequestURI()) %>">Sign in</a>
 

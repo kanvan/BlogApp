@@ -39,10 +39,12 @@ li a:hover {
   background-color: #111;
 }
 
-.active {
-  background-color: #FF3333;
+p{
+	font: Helvetica;
 }
-
+h1{
+	font:Helvetica
+}
 
 
 }
